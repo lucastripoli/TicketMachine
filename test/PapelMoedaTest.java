@@ -14,9 +14,7 @@ import org.junit.Test;
  */
 public class PapelMoedaTest {
     
-    public PapelMoedaTest() {
-
-    }
+ 
     
     @Test
     public void getValortest(){
