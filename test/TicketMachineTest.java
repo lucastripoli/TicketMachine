@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import br.calebe.ticketmachine.core.TicketMachine;
 import org.junit.Test;
@@ -13,44 +8,40 @@ import static org.junit.Assert.*;
  * @author lucastripoli
  */
 public class TicketMachineTest {
-    
-    public TicketMachineTest() {
-    }
-    
+
     @Test
-    public void testarGetSaldo(){
-        int valor = 500 ;
-        TicketMachine tm = new TicketMachine(100);
-        try{
-             tm.inserir(valor);
-        }catch(Exception ex){
-            
+    public void testarGetSaldo() {
+        int valor = 100;
+        TicketMachine tm = new TicketMachine(500);
+        try {
+            tm.inserir(valor);
+        } catch (Exception ex) {
+            System.out.println("bloco catch");
         }
         assertEquals(valor, tm.getSaldo());
+
     }
-    
+
     @Test
-    public void testarGetTroco(){
+    public void testarGetTroco() {
         TicketMachine tm = new TicketMachine(500);
-         assertNotNull(tm.getTroco());
+        assertNull(tm.getTroco());
     }
-    
+
     @Test
-    public void testarImprimir(){
-         String result = "*****************\n";
-        result += "*** R$ " + "500.00" + ",00 ****\n";
+    public void testarImprimir() {
+      int valor = 100;
+       String result = "*****************\n";
+        result += "*** R$ " + valor + ",00 ****\n";
         result += "*****************\n";
-        int valor = 500;
-        TicketMachine tm = new TicketMachine(valor);
-        try{
+        
+        TicketMachine tm = new TicketMachine(35);
+        try {
             tm.inserir(valor);
             assertEquals(result, tm.imprimir());
-        }catch(Exception ex){
-            
+        } catch (Exception ex) {
+
         }
-         
-        
+
+         }
     }
-    
-    
-}
